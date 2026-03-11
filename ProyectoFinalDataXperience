@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyNCWG7F7+S+dCVf+/2vt6Oe",
+      "authorship_tag": "ABX9TyMgw9193PTgUwu28rpeZrzq",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -511,18 +511,18 @@
         "import pandas as pd\n",
         "import io\n",
         "\n",
-        "# Subir el archivo desde tu computadora\n",
+        "#Subir el archivo desde lacomputadora\n",
         "uploaded = files.upload()\n",
         "\n",
-        "# Obtener el nombre del archivo subido. Asumimos que solo se sube un archivo.\n",
+        "#Obtener el nombre del archivo subido. Asumimos que solo se sube un archivo.\n",
         "file_name = list(uploaded.keys())[0]\n",
         "\n",
-        "# Cargar los datos y limpiar duplicados\n",
+        "#cargar los datos y limpiar duplicados\n",
         "# Usamos encoding='latin-1' para evitar errores con caracteres especiales\n",
         "df = pd.read_csv(io.BytesIO(uploaded[file_name]), encoding='latin-1')\n",
         "df = df.drop_duplicates()\n",
         "\n",
-        "# Mostrar un resumen de los datos cargados\n",
+        "#se muestra un resumen de los datos cargados\n",
         "print(\"Primeros registros del dataset depurado:\")\n",
         "display(df.head())"
       ]
@@ -586,10 +586,10 @@
         "import matplotlib.pyplot as plt\n",
         "from sklearn.linear_model import LinearRegression\n",
         "\n",
-        "# Limpieza de la columna RAM para convertirla en número\n",
+        "#Limpieza de la columna RAM para convertirla en número\n",
         "df['Ram_n'] = df['RAM (GB)'].astype(int)\n",
         "\n",
-        "# Creación del gráfico de dispersión con línea de tendencia\n",
+        "#Creación del gráfico de dispersión con línea de tendencia\n",
         "plt.figure(figsize=(10,6))\n",
         "sns.regplot(x='Ram_n', y='Price (Euro)', data=df, scatter_kws={'alpha':0.5}, line_kws={\"color\": \"red\"})\n",
         "plt.title('Relación RAM vs Precio (Análisis Predictivo)')\n",
@@ -598,7 +598,7 @@
         "plt.grid(True)\n",
         "plt.show()\n",
         "\n",
-        "# Entrenamiento del modelo simple\n",
+        "#Entrenamiento del modelo simple\n",
         "X = df[['Ram_n']]\n",
         "y = df['Price (Euro)']\n",
         "modelo = LinearRegression().fit(X, y)\n",
