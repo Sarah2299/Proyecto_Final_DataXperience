@@ -1,7 +1,7 @@
 # Análisis Predictivo de Precios de Laptops
 Proyecto Final - DataXperience
 
-# Información del Estudiante
+# Estudiate
 Nombre: Sarah Valentina Rodríguez Torres
 Programa: Ingeniería de Sistemas (3er Semestre)
 Universidad EAN
